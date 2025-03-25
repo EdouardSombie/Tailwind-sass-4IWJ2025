@@ -1,5 +1,17 @@
 @use "fonts";
+@use "variables" as v;
+@use "sass:color";
+
 @layer base {
+	:root {
+		@each $name, $value in v.$colors {
+			--#{$name}: #{$value};
+			@if ($name != "white") {
+				--#{$name}-light: #{color.scale($value, $lightness: 30%)};
+			}
+		}
+	}
+
 	body {
 		font-family: fonts.$font1;
 	}

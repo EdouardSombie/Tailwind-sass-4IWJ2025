@@ -162,6 +162,21 @@
   }
 }
 @layer base {
+  :root {
+    --white: #fff;
+    --black: #000;
+    --black-light: rgb(76.5, 76.5, 76.5);
+    --blue: #5d7a97;
+    --blue-light: rgb(139.7696721311, 161.9, 184.0303278689);
+    --darkBlue: #1e293a;
+    --darkBlue-light: rgb(73.1590909091, 99.9840909091, 141.4409090909);
+    --pink: #ff2896;
+    --pink-light: rgb(255, 104.5, 181.5);
+    --orange: #ff9b65;
+    --orange-light: rgb(255, 185, 147.2);
+    --green: #00d5d5;
+    --green-light: rgb(47.1, 255, 255);
+  }
   body {
     font-family: "Istok Web", sans-serif;
   }
@@ -292,9 +307,69 @@
 }
 @layer components {
   .bioCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
     width: 20rem;
     border-radius: 1rem;
     padding: 2rem;
+    color: var(--blue);
+    background-color: var(--darkBlue);
+  }
+  .bioCard > * {
+    margin: 0;
+    text-align: center;
+  }
+  .bioCard__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+  .bioCard__img {
+    display: inline-block;
+    width: 11rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 9999px;
+    align-self: center;
+    filter: saturate(0);
+    margin-bottom: 1.5rem;
+  }
+  .bioCard__h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .bioCard__h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+  .bioCard__hr {
+    margin-bottom: 1rem;
+    border-color: var(--blue);
+  }
+  .bioCard__p {
+    line-height: normal;
+  }
+  .bioCard__ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
   }
 }
 

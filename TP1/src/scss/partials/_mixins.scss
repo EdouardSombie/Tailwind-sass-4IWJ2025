@@ -1,0 +1,16 @@
+@mixin flexbox($direction: row, $wrap: nowrap, $justify: flex-start, $align: stretch, $gap: 0) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+}
+
+@mixin avatar($width: 2rem) {
+	display: inline-block;
+	width: $width;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 9999px; // valeur tjs plus grande que n'importe lequel des côtés du bloc
+}
