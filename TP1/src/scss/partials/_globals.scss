@@ -1,0 +1,14 @@
+@use "fonts";
+
+body {
+	font-family: fonts.$font1;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	fill: currentColor;
+}
