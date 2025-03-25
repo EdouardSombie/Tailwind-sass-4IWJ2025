@@ -1,14 +1,15 @@
 @use "fonts";
+@layer base {
+	body {
+		font-family: fonts.$font1;
+	}
 
-body {
-	font-family: fonts.$font1;
-}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 
-img {
-	max-width: 100%;
-	height: auto;
-}
-
-svg {
-	fill: currentColor;
+	svg {
+		fill: currentColor;
+	}
 }

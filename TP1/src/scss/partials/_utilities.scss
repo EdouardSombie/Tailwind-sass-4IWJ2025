@@ -1,0 +1,18 @@
+@use "variables" as v;
+// classes utilitaires du framework
+@layer utilities {
+	@for $i from 0 through 6 {
+		.m-#{$i} {
+			margin: $i * v.$spacing;
+		}
+		.mt-#{$i} {
+			margin-top: $i * v.$spacing;
+		}
+		.mb-#{$i} {
+			margin-bottom: $i * v.$spacing;
+		}
+		.p-#{$i} {
+			padding: $i * v.$spacing;
+		}
+	}
+}

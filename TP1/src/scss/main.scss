@@ -1,6 +1,10 @@
+@use "partials/layers";
+
 @use "vendor/modern-normalize.css";
 
 @use "partials/fonts";
 @use "partials/globals";
+@use "partials/utilities";
 
 @use "components/container";
+@use "components/bioCard";

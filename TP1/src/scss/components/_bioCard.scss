@@ -1,0 +1,10 @@
+@use "../partials/functions" as f;
+
+@layer components {
+	.bioCard {
+		width: f.rem(320);
+		border-radius: f.rem(16);
+		padding: f.rem(32);
+		//background-color: ;
+	}
+}
