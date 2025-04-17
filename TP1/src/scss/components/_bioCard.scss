@@ -3,13 +3,24 @@
 
 @layer components {
 	.bioCard {
+		// Variables locales du composant
+		--bgColor: var(--darkBlue);
+		--imageFilter: saturate(0);
+		--gradientColor1: var(--green-light);
+		--gradientColor2: var(--green);
+		--gradientColor3: var(--pink);
+		--gradientColor4: var(--orange);
+		--pillColor: var(--pink);
+		--pillAltColor: var(--black);
+
 		@include m.flexbox($direction: column);
 		position: relative;
 		width: f.rem(320);
 		border-radius: f.rem(16);
 		padding: f.rem(32);
 		color: var(--blue);
-		background-color: var(--darkBlue);
+		background-color: var(--bgColor);
+		overflow: hidden;
 		& > * {
 			margin: 0;
 			text-align: center;
@@ -24,13 +35,14 @@
 		&__img {
 			@include m.avatar(f.rem(176));
 			align-self: center;
-			filter: saturate(0);
+			filter: var(--imageFilter);
 			margin-bottom: f.rem(24);
 		}
 		&__h1 {
 			font-size: f.rem(24);
 			line-height: 1;
 			margin-bottom: f.rem(12);
+			@include m.textGradient(bottom, var(--gradientColor3), var(--gradientColor4));
 		}
 		&__h2 {
 			font-size: f.rem(20);
@@ -43,9 +55,42 @@
 		}
 		&__p {
 			line-height: normal;
+			margin-bottom: f.rem(48);
 		}
 		&__ul {
 			@include m.flexbox($justify: center, $gap: f.rem(24));
+			@include m.resetList;
+		}
+		&__a {
+			@include m.pillButton(var(--white), var(--pillColor));
+			&--alt {
+				@include m.pillButton(linear-gradient(var(--gradientColor1), var(--gradientColor2)), var(--pillAltColor), true);
+			}
+		}
+		&__footer {
+			position: relative;
+			& > * {
+				position: relative;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				inset: f.rem(-32);
+				bottom: f.rem(-60);
+				background: linear-gradient(-187deg, var(--gradientColor4), var(--gradientColor3) 60%);
+				transform: skewY(7deg);
+			}
+		}
+
+		@media (prefers-color-scheme: dark) {
+			--bgColor: var(--white);
+			--imageFilter: saturate(1);
+			--gradientColor1: var(--pink);
+			--gradientColor2: var(--orange);
+			--gradientColor3: var(--green-light);
+			--gradientColor4: var(--green);
+			--pillColor: var(--blue);
+			--pillAltColor: var(--white);
 		}
 	}
 }

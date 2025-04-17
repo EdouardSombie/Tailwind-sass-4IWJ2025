@@ -10,10 +10,20 @@
 				--#{$name}-light: #{color.scale($value, $lightness: 30%)};
 			}
 		}
+
+		--body-bg-color: var(--white);
+		--body-text-color: var(--black);
+
+		@media (prefers-color-scheme: dark) {
+			--body-bg-color: var(--black);
+			--body-text-color: var(--white);
+		}
 	}
 
 	body {
 		font-family: fonts.$font1;
+		background-color: var(--body-bg-color);
+		color: var(--body-text-color);
 	}
 
 	img {
