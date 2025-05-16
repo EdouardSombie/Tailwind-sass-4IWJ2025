@@ -1,1 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+  --font-istok: "Istok Web", sans-serif;
+  --color-blue-50: #f5f7fa;
+  --color-blue-100: #e9eef5;
+  --color-blue-200: #cedae9;
+  --color-blue-300: #a3bad6;
+  --color-blue-400: #7297be;
+  --color-blue-500: #5d7a97;
+  --color-blue-600: #3d618c;
+  --color-blue-700: #334e71;
+  --color-blue-800: #2d445f;
+  --color-blue-900: #2a3a50;
+  --color-blue-950: #1e293a;
+
+  --color-pink-50: #fef1f8;
+  --color-pink-100: #fee5f3;
+  --color-pink-200: #ffcaea;
+  --color-pink-300: #ff9fd7;
+  --color-pink-400: #ff63ba;
+  --color-pink-500: #ff2896;
+  --color-pink-600: #f01279;
+  --color-pink-700: #d1055e;
+  --color-pink-800: #ad074d;
+  --color-pink-900: #8f0c43;
+  --color-pink-950: #580024;
+
+  --color-orange-50: #fff4ed;
+  --color-orange-100: #ffe6d4;
+  --color-orange-200: #ffc9a9;
+  --color-orange-300: #ff9b65;
+  --color-orange-400: #fe7239;
+  --color-orange-500: #fc4d13;
+  --color-orange-600: #ed3209;
+  --color-orange-700: #c52209;
+  --color-orange-800: #9c1d10;
+  --color-orange-900: #7e1a10;
+  --color-orange-950: #440a06;
+
+  --color-aquamarine-50: #e7fff8;
+  --color-aquamarine-100: #c6ffec;
+  --color-aquamarine-200: #92ffe0;
+  --color-aquamarine-300: #4dffd4;
+  --color-aquamarine-400: #00ffc2;
+  --color-aquamarine-500: #00e8ae;
+  --color-aquamarine-600: #00be90;
+  --color-aquamarine-700: #009878;
+  --color-aquamarine-800: #007860;
+  --color-aquamarine-900: #006250;
+  --color-aquamarine-950: #00382f;
+
+  --color-cyan-50: #eefffd;
+  --color-cyan-100: #c6fffa;
+  --color-cyan-200: #8efff7;
+  --color-cyan-300: #4dfbf3;
+  --color-cyan-400: #19e8e5;
+  --color-cyan-500: #00d5d5;
+  --color-cyan-600: #00a0a4;
+  --color-cyan-700: #027f83;
+  --color-cyan-800: #086367;
+  --color-cyan-900: #0c5255;
+  --color-cyan-950: #002f34;
+}
+
+@layer base {
+  body {
+    @apply font-istok;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex aspect-square w-8 rounded-full bg-white;
+    svg {
+      @apply m-auto h-4 w-auto fill-pink-500 dark:fill-blue-500;
+    }
+  }
+  .btn-alt {
+    @apply from-aquamarine-400 bg-linear-to-b to-cyan-500 dark:from-pink-500 dark:to-orange-300;
+    svg {
+      @apply h-6 fill-black dark:fill-white;
+    }
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
